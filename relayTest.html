@@ -1,0 +1,45 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <!-- utf-8 is required for JS Plugin default fonts -->
+      <!-- VOUCHED BALANCED SECURITY SETTINGS -->
+    <meta charset="utf-8" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1.0">
+    <script src="https://static.vouched.id/widget/vouched-2.0.0.js"></script>
+    <script type='text/javascript'>
+      (function() {
+        var vouched = Vouched({
+        // Optional verification properties.
+          liveness: 'mouth',
+          id: 'camera',
+          includeBarcode: 'true',
+          manualCaptureTimeout: 20000,
+          showTermsAndPrivacy: true,
+          appId: 'k!s~6P2Qp_DKoMsqJS_nB7RsK_6y2F',
+         // your webhook for POST verification processing
+          //callbackURL: 'https://website.com/webhook',
+  
+          // mobile handoff
+          crossDevice: true,
+          crossDeviceQRCode: true,
+          crossDeviceSMS: true,
+          
+          // called when the verification is completed.
+          onDone: (job) => {
+              window.location.replace("https://vouched.id");
+            },
+          // theme
+          theme: {
+            name: 'verbose',
+          },
+        });
+        vouched.mount("#vouched-element");
+      })();
+      </script>
+  </head>
+  <body>
+    <div id='vouched-element' style="height: 100%"/>
+  </body>
+  </html> 
+  
